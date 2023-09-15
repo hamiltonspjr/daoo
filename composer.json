@@ -1,0 +1,17 @@
+{
+    "name": "daoo/aula03",
+    "description": "\"Introdução ao composer\"",
+    "autoload": {
+        "psr-4": {
+            "Daoo\\Aula03\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "hamiltonspjr",
+            "email": "hamilton-souza@outlook.com.br"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

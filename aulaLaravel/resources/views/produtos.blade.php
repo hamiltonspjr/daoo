@@ -7,7 +7,7 @@
     <title>Lista de Produtos</title>
 </head>
 <body>
-<h1>Produtos</h1>
+<h1>Produtos - quantidade:{{$quantidade}}</h1>
 @if ($ListProdutos->count()>0)
     <table>
         <thead>
@@ -34,5 +34,6 @@
 @else
     <p>Produtos não encontrados! </p>
 @endif
+
 </body>
 </html>

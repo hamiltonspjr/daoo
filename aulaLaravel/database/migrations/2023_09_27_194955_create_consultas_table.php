@@ -15,8 +15,12 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->date("data_consulta");
-            $table->string("nome_paciente");
-            $table->string("nome_profissional");
+            $table->foreignId("paciente_id")
+                ->constrained()
+                ->cascadeOnDelete();
+            $table->foreignId("profissional_id")
+                ->constrained()
+                ->cascadeOnDelete();
         });
     }
 

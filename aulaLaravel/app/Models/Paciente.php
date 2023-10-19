@@ -9,4 +9,7 @@ class Paciente extends Model
 {
     use HasFactory;
     protected $fillable = ['nome', 'email', 'telefone', 'data_de_nascimento', 'cep'];
+    public function consultas() {
+        return $this->hasMany(Consultas::class);
+    }
 }

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string("email");
             $table->string("telefone");
             $table->date("data_de_nascimento");
-            $table->integer("cep");
+            $table->string("cep");
         });
     }
 

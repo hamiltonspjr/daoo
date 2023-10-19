@@ -9,4 +9,10 @@ class Consultas extends Model
 {
     use HasFactory;
     protected $fillable = ['data_consulta','nome_paciente', 'nome_profissional'];
+    public function paciente() {
+        return $this->belongsTo(Paciente::class);
+    }
+    public function profissional() {
+        return $this->belongsTo(Profissional::class);
+    }
 }

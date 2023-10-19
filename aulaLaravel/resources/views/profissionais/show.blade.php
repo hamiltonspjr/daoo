@@ -17,8 +17,6 @@
             <th>Telefone</th>
             <th>Data de Nascimento</th>
             <th>Cep</th>
-            <th>Especialidade</th>
-            <th>Credencial</th>
 
         </tr>
         </thead>
@@ -29,8 +27,7 @@
             <td>{{$profissional->telefone}}</td>
             <td>{{($profissional->data_de_nascimento)}}</td>
             <td>{{($profissional->cep)}}</td>
-            <td>{{($profissional->especialidade)}}</td>
-            <td>{{($profissional->numero_credencial)}}</td>
+
         </tr>
         </tbody>
     </table>

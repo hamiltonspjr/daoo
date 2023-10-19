@@ -34,14 +34,6 @@
             <td>Cep:</td>
             <td><input type="text" name="cep"/></td>
         </tr>
-        <tr>
-            <td>Especialidade:</td>
-            <td><input type="text" name="especialidade"/></td>
-        </tr>
-        <tr>
-            <td>Credencial:</td>
-            <td><input type="text" name="numero_credencial"/></td>
-        </tr>
         <tr align="center">
             <td colspan="2"><input type="submit" value="Criar"/></td>
         </tr>

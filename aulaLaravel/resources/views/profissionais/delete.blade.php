@@ -15,8 +15,7 @@
         <li>Telefone: {{ $profissional->telefone }}</li>
         <li>Data de Nascimento: {{$profissional->data_de_nascimento}}</li>
         <li>Cep: {{$profissional->cep}}</li>
-        <li>Especialidade: {{$profissional->especialidade}}</li>
-        <li>Credencial: {{$profissional->numero_credencial}}</li>
+
 
     </ul>
     <table>

@@ -33,14 +33,7 @@
             <td>Cep:</td>
             <td><input type="text" name="cep" value="{{$profissional->cep}}"/></td>
         </tr>
-        <tr>
-            <td>Especialidade:</td>
-            <td><input type="text" name="especialidade" value="{{$profissional->especialidade}}" /></td>
-        </tr>
-        <tr>
-            <td>Credencial:</td>
-            <td><input type="text" name="numero_credencial" value="{{$profissional->numero_credencial}}" /></td>
-        </tr>
+
         <tr align="center">
             <td colspan="2">
                 <input type="submit" value="Salvar"/>

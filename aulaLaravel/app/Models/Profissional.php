@@ -9,4 +9,8 @@ class Profissional extends Model
 {
     use HasFactory;
     protected $fillable = ['nome', 'email', 'telefone', 'data_de_nascimento', 'cep', 'especialidade', 'numero_credencial'];
+
+    public function consultas() {
+        return $this->hasMany(Consultas::class);
+    }
 }

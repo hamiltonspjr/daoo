@@ -19,8 +19,6 @@ return new class extends Migration
             $table->string("telefone");
             $table->date("data_de_nascimento");
             $table->string("cep");
-            $table->string("especialidade");
-            $table->string("numero_credencial");
         });
     }
 

@@ -65,19 +65,20 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## Consultas da Atividade 7
 ```
 #consultas
-DB::Table('consultas')->get();
-DB::Table('consultas')->whereBetween('paciente_id', [9])->get();
-DB::Table('consultas')->whereBetween('profissional_id',[1])->get();
+#consultas
+Consultas::get()
+Consultas::where('paciente_id', 9)->get()
+Consultas::where('profissional_id',1)->get()
 
 #pacientes
-DB::Table('pacientes')->get()
-DB::Table('pacientes')->orderBy('nome','asc')->get();
-DB::Table('pacientes')->orderBy('email','asc')->get();
+Paciente::get()
+Paciente::orderBy('nome','asc')->get()
+Paciente::where('email','campos.gian@r7.com')->get()
 
-#treinos
-DB::Table('profissionais')->get();
-DB::Table('profissionais')->orderBy('nome','asc')->get();
-DB::Table('profissionais')->orderBy('email','asc')->get();
+#profissionais
+Profissional::get()
+Profissional::orderBy('nome','asc')->get()
+Profissional::where('cep','62794-345')->get()
 ```
 
 ## License

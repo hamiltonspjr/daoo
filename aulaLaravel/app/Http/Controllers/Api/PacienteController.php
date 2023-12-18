@@ -9,9 +9,15 @@ use Illuminate\Http\Request;
 class PacienteController extends Controller
 {
 
-    public function index(): \Illuminate\Http\JsonResponse
+    public function index(Request $request)
     {
-        return response()->json(Paciente::all());
+        $perPage = $request->query('per_page');
+        $pacientePaginated = Paciente::paginate($perPage);
+        $pacientePaginated->appends([
+            'per_page' =>$perPage
+        ]);
+
+        return response()->json($pacientePaginated);
     }
 
 

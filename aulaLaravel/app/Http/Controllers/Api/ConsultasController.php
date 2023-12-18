@@ -20,9 +20,15 @@ class ConsultasController extends Controller
      * Display a listing of the resource.
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $this->consulta->all();
+        $perPage = $request->query('per_page');
+        $consultaPaginated = Consultas::paginate($perPage);
+        $consultaPaginated->appends([
+            'per_page' =>$perPage
+        ]);
+
+        return response()->json($consultaPaginated);
     }
 
     /**

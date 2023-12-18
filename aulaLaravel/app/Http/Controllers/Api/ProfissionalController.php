@@ -18,9 +18,15 @@ class ProfissionalController extends Controller
      * Display a listing of the resource.
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $this->profissional->all();
+      $perPage = $request->query('per_page');
+      $profissionalPaginated = Profissional::paginate($perPage);
+        $profissionalPaginated->appends([
+          'per_page' =>$perPage
+      ]);
+
+      return response()->json($profissionalPaginated);
     }
 
     /**

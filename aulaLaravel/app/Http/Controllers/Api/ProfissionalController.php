@@ -97,4 +97,8 @@ class ProfissionalController extends Controller
             ], 404);
         }
     }
+
+    public function consultas(Profissional $profissional) {
+        return response()->json($profissional->load('consultas'));
+    }
 }

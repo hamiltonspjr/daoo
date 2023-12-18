@@ -23,6 +23,10 @@ Route::get('/paciente/{id}', [PacienteController::class, 'show']);
 Route::post('/paciente', [PacienteController::class, 'store']);
 Route::put('/paciente/{id}', [PacienteController::class, 'update']);
 Route::delete('/paciente/{id}', [PacienteController::class, 'remove']);
+Route::get('paciente/{paciente}/consultas', [PacienteController::class, 'consultas'])->name('paciente.consultas');
 
 Route::apiResource('profissional', \App\Http\Controllers\Api\ProfissionalController::class);
+Route::get('profissional/{profissional}/consultas', [\App\Http\Controllers\Api\ProfissionalController::class, 'consultas'])->name('profissional.consultas');
+
 Route::apiResource('consultas', \App\Http\Controllers\Api\ConsultasController::class);
+

@@ -76,5 +76,9 @@ class PacienteController extends Controller
             ], 404);
         }
     }
+    public function consultas(Paciente $paciente) {
+        return response()->json($paciente->load('consultas'));
+    }
+
 
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PacienteRequest;
 use App\Models\Paciente;
 use Illuminate\Http\Request;
 
@@ -36,7 +37,7 @@ class PacienteController extends Controller
         }
     }
 
-    public function store(Request $request) {
+    public function store(PacienteRequest $request) {
         try {
             $newPaciente = $request->all();
             $storedPaciente = Paciente::create($newPaciente);
@@ -49,12 +50,12 @@ class PacienteController extends Controller
                 'Erro'=> "Erro ao inserir novo paciente!",
                 'Exception'=>$error->getMessage()
             ];
-            $statusHttp = 404;
+            $statusHttp = $error->status ?? 500;
             return response()->json($responseError, $statusHttp);
         }
     }
 
-    public function update (Request $request, $id) {
+    public function update (PacienteRequest $request, $id) {
         try {
             $data = $request->all();
             $newPaciente = Paciente::findOrFail($id);
@@ -64,10 +65,12 @@ class PacienteController extends Controller
                 "paciente"=>$newPaciente
             ]);
         }catch (\Exception $error) {
-            return response()->json([
+            $responseError = [
                 'Erro'=>"Erro ao atualizar o paciente!",
                 'Exception'=>$error->getMessage()
-            ], 404);
+            ];
+            $statusHttp = $error->status ?? 500;
+            return response()->json($responseError, $statusHttp);
         }
     }
 

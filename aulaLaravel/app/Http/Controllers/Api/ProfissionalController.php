@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProfissionalRequest;
 use App\Models\Profissional;
 use Illuminate\Http\Request;
 
@@ -32,7 +33,7 @@ class ProfissionalController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ProfissionalRequest $request)
     {
         //
         try {
@@ -45,7 +46,7 @@ class ProfissionalController extends Controller
                 'Erro'=>"Erro ao inserir novo profissional!",
                 'Exception'=>$error->getMessage()
             ];
-            $statusHttp = 404;
+            $statusHttp = $error->status ?? 500;
             return response()->json($responseError, $statusHttp);
         }
     }
@@ -67,7 +68,7 @@ class ProfissionalController extends Controller
      * @param Profissional $profissional
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Profissional $profissional)
+    public function update(ProfissionalRequest $request, Profissional $profissional)
     {
         try {
             $profissional->update($request->all());
@@ -76,10 +77,12 @@ class ProfissionalController extends Controller
                 "Profissional"=>$profissional
             ]);
         }catch (\Exception $error) {
-            return response()->json([
+            $responseError = [
                 'Erro'=>"Erro ao atualizar o profissional!",
                 'Exception'=>$error->getMessage()
-            ], 404);
+            ];
+            $statusHttp = $error->status ?? 500;
+            return response()->json($responseError, $statusHttp);
         }
     }
 

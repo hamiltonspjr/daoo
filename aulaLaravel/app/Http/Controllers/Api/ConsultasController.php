@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Consultas;
 use Illuminate\Http\Request;
 
+
 class ConsultasController extends Controller
 {
 
@@ -37,6 +38,10 @@ class ConsultasController extends Controller
     public function store(Request $request)
     {
         try {
+            if(!$request->user()->tokenCan('is-admin')){
+                $statusHttp = 403;
+                throw new \Exception('você não tem permissão para essa funcionalidade');
+            }
             return response()->json([
                 'Message'=>'Consulta inserida com sucesso!',
                 'Consulta'=>$this->consulta->create($request->all())

@@ -24,6 +24,6 @@ class DatabaseSeeder extends Seeder
         // ]);
         Paciente::factory(10)->create();
         Profissional::factory(5)->create();
-        Consultas::factory(10)->create();
+        // Consultas::factory(10)->create();
     }
 }

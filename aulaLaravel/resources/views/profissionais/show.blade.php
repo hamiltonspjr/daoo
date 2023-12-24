@@ -34,6 +34,6 @@
 @else
     <p>Profissional não encontrado! </p>
 @endif
-<a href="/profissionais">voltar</a>
+<a href="" onclick="history.back()">voltar</a>
 </body>
 </html>

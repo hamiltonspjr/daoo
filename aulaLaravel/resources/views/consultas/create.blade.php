@@ -20,11 +20,22 @@
         </tr>
         <tr>
             <td>Nome do Paciente:</td>
-            <td><input type="text" name="nome_paciente"/></td>
+            <td>
+            <!-- Poderia ter substituido os inputs por select -->
+            <select name='paciente_id'>
+                @foreach($pacientesCollection as $paciente)
+                    <option value='{{$paciente->id}}'>{{$paciente->nome}}</option>
+                @endforeach
+            </select>
+        </td>
         </tr>
         <tr>
             <td>Nome do Profissional:</td>
-            <td><input type="text" name="nome_profissional"/></td>
+            <td><select name='profissional_id'>
+                @foreach($profissionalCollection as $profissional)
+                    <option value='{{$profissional->id}}'>{{$profissional->nome}}</option>
+                @endforeach
+            </select></td>
         </tr>
 
         <tr align="center">

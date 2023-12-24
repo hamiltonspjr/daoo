@@ -42,10 +42,14 @@ class ConsultasController extends Controller
 
     public function edit($id): View{
         $consulta = Consultas::find($id);
+        $pacientesCollection = Paciente::all();
+        $profissionalCollection = Profissional::all();
         if(!$consulta)
             dd("Consulta não encontrada");
         return view('consultas.edit',[
-            'consulta'=>$consulta
+            'consulta'=>$consulta,
+            'pacientesCollection'=>$pacientesCollection,
+            'profissionalCollection'=>$profissionalCollection
         ]);
     }
 

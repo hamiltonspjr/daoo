@@ -33,6 +33,6 @@
 @else
     <p>Paciente não encontrado! </p>
 @endif
-<a href="/pacientes">voltar</a>
+<a href="" onclick="history.back()">voltar</a>
 </body>
 </html>

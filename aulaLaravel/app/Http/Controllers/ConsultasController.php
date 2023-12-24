@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Consultas;
+use App\Models\{Consultas, Profissional, Paciente};
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -24,7 +24,12 @@ class ConsultasController extends Controller
     }
 
     public function create(): View{
-        return view('consultas.create');
+        $pacientesCollection = Paciente::all();
+        $profissionalCollection = Profissional::all();
+        return view('consultas.create',[
+            'pacientesCollection'=>$pacientesCollection,
+            'profissionalCollection'=>$profissionalCollection
+        ]);
     }
 
     public function store(Request $request) {

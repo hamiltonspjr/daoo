@@ -28,7 +28,7 @@ Route::get('paciente/{paciente}/consultas', [PacienteController::class, 'consult
 Route::apiResource('profissional', \App\Http\Controllers\Api\ProfissionalController::class)->middleware('auth:sanctum');
 Route::get('profissional/{profissional}/consultas', [\App\Http\Controllers\Api\ProfissionalController::class, 'consultas'])->name('profissional.consultas');
 
-Route::apiResource('consultas', \App\Http\Controllers\Api\ConsultasController::class)->middleware('ability:is-admin');
+Route::apiResource('consultas', \App\Http\Controllers\Api\ConsultasController::class)->middleware('auth:sanctum')->middleware('ability:is-admin');
 
 Route::apiResource('users', \App\Http\Controllers\Api\UserController::class);
 Route::post('/login', [\App\Http\Controllers\Api\LoginController::class, 'login'])->name('login');

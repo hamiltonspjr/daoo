@@ -11,8 +11,8 @@
 @if ($consulta)
     <h1>{{ $consulta->data_consulta }}</h1>
     <ul>
-        <li>Nome do Paciente: {{ $consulta->nome_paciente }}</li>
-        <li>Nome do Profissional: {{ $consulta->nome_profissional }}</li>
+        <li>ID do Paciente: {{ $consulta->paciente_id }}</li>
+        <li>ID do Profissional: {{ $consulta->profissional_id }}</li>
     </ul>
     <table>
         <tr>

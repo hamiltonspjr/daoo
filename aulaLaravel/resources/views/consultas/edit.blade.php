@@ -18,12 +18,12 @@
             <td><input type="date" name="data_consulta" value="{{$consulta->data_consulta}}"/></td>
         </tr>
         <tr>
-            <td>Nome do Paciente:</td>
-            <td><input type="text" name="nome_paciente" value="{{$consulta->nome_paciente}}" /></td>
+            <td>ID do Paciente:</td>
+            <td><input type="text" name="paciente_id" value="{{$consulta->paciente_id}}" /></td>
         </tr>
         <tr>
-            <td>Nome do Profissional:</td>
-            <td><input type="text" name="nome_profissional" value="{{$consulta->nome_profissional}}" /></td>
+            <td>ID do Profissional:</td>
+            <td><input type="text" name="profissional_id" value="{{$consulta->profissional_id}}" /></td>
         </tr>
 
         <tr align="center">

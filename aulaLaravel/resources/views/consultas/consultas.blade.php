@@ -14,8 +14,8 @@
         <tr>
             <th>Id</th>
             <th>Data da Consulta</th>
-            <th>Nome do Paciente</th>
-            <th>Nome do Profissional</th>
+            <th>ID do Paciente</th>
+            <th>ID do Profissional</th>
         </tr>
         </thead>
         <tbody>
@@ -27,8 +27,8 @@
                     </a>
                 </td>
                 <td>{{$consulta->data_consulta}}</td>
-                <td>{{$consulta->nome_paciente}}</td>
-                <td>{{$consulta->nome_profissional}}</td>
+                <td>{{$consulta->paciente_id}}</td>
+                <td>{{$consulta->profissional_id}}</td>
                 <td>
                     <a href="{{ route('consulta-edit',$consulta->id) }}">Editar</a>
                     <a href="{{ route('consulta-delete',$consulta->id) }}">&#128465</a>

@@ -20,7 +20,7 @@ class ConsultasFactory extends Factory
 
             "data_consulta" => fake()->date(),
             "paciente_id" => fake()->numberBetween(1,10),
-            "profissional_id" => fake()->numberBetween(1,10),
+            "profissional_id" => fake()->numberBetween(1,5),
         ];
     }
 }
